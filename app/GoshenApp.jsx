@@ -8,11 +8,8 @@ const sanity = createClient({
   dataset: "production",
   apiVersion: "2026-05-27",
   useCdn: true,
-});
+}); // <-- Cette ligne doit être exactement comme ça pour bien fermer le bloc !
 
-// ─── CHARGEMENT DES COMPOSANTS GRAPHLOQ (REQUÊTES OPTIMISÉES) ──────
-const QUERIES = {
-// ... tout le reste de ton fichier reste identique en dessous !
 // ─── CHARGEMENT DES COMPOSANTS GRAPHLOQ (REQUÊTES OPTIMISÉES) ──────
 const QUERIES = {
   slides: `*[_type == "slide"] | order(_createdAt asc) {
@@ -29,6 +26,9 @@ const QUERIES = {
     options[]{ value, label, extra }, optionPrices, defaultOption
   }`
 };
+
+// ─── CONSTANTES ET DESIGN SYSTEM CONTROLE DES COULEURS ─────────────
+// ... Tout le reste de ton fichier (const C = { ... }) reste inchangé en dessous !
 
 // ─── CONSTANTES ET DESIGN SYSTEM CONTROLE DES COULEURS ─────────────
 const C = {
