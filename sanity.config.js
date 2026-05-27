@@ -1,16 +1,16 @@
 import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
+import { structureTool } from 'sanity/structure'; // 🟢 Remplacement de desk par structure
 
 export default defineConfig({
   name: 'default',
   title: 'Goshen AgroFarm',
 
-  projectId: 'lclay9ft', // Ton ID de projet
+  projectId: 'lclay9ft', // Ton ID de projet validé sur ta capture Sanity
   dataset: 'production',
 
-  basePath: '/studio', // L'adresse URL où le studio va s'afficher
+  basePath: '/studio', // L'adresse URL sur ton site
 
-  plugins: [deskTool()],
+  plugins: [structureTool()], // 🟢 Utilisation du nouveau plugin
 
   schema: {
     types: [
