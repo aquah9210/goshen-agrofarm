@@ -3,14 +3,16 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { createClient } from "@sanity/client";
 
 // ─── CONFIGURATION SANITY CLIENT ─────────────────────────────────
-// Ces variables d'environnement Next.js pointeront vers ton projet Sanity.
 const sanity = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "votre_project_id",
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  projectId: "lclay9ft", 
+  dataset: "production",
   apiVersion: "2026-05-27",
   useCdn: true,
 });
 
+// ─── CHARGEMENT DES COMPOSANTS GRAPHLOQ (REQUÊTES OPTIMISÉES) ──────
+const QUERIES = {
+// ... tout le reste de ton fichier reste identique en dessous !
 // ─── CHARGEMENT DES COMPOSANTS GRAPHLOQ (REQUÊTES OPTIMISÉES) ──────
 const QUERIES = {
   slides: `*[_type == "slide"] | order(_createdAt asc) {
