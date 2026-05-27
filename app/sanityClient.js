@@ -2,13 +2,11 @@ import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
 export const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, // Ton identifiant unique Sanity
+  projectId: 'lclay9ft', // 👈 Ton ID unique visible sur ta capture
   dataset: 'production',
-  apiVersion: '2026-05-27', // Code mis à jour avec la date d'aujourd'hui
-  useCdn: true, // Chargement ultra-rapide
+  useCdn: true,
+  apiVersion: '2024-03-01',
 });
 
 const builder = imageUrlBuilder(client);
-export function urlFor(source) {
-  return builder.image(source);
-}
+export const urlFor = (source) => builder.image(source);
